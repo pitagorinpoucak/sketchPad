@@ -1,26 +1,36 @@
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  border: 1px solid red;
 }
 
 /*BASIC STYLE*/
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
 
 #main-body {
   display: flex;
   justify-content: center;
+  gap: 2vw;
+}
+
+.main.bar {
+  width: 30vw;
+  height: auto;
 }
 
 /*GRID BASE*/
 
 .grid-item {
-  border: 2px solid black;
-  height: 50px;
-  width: 50px;
   border-radius: 50%;
 }
 
 #grid-container {
   display: grid;
-  grid-gap: 5px;
+  width: 30vw;
 }
