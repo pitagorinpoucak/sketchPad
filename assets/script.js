@@ -32,11 +32,24 @@ function drawGrid(size) {
   const gridItems = document.querySelectorAll("#grid-container div");
   gridItems.forEach((item) => {
     item.classList.add("grid-item");
-    //item.style.backgroundColor = "#ffffff";
+    item.style.backgroundColor = "#ffffff";
     item.addEventListener("mouseover", changeColor);
     item.style.width = `${gridWidth / size}px`;
     item.style.height = `${gridWidth / size}px`;
   });
+}
+
+function changeGridStyle() {
+  const button = document.getElementById("gridStyle");
+  const gridParts = document.querySelectorAll(".grid-item");
+  if (button.innerText === "Circle") {
+    button.innerText = "Square";
+    gridParts.forEach((item) => item.classList.add("radius"));
+  } else {
+    button.innerText = "Circle";
+
+    gridParts.forEach((item) => item.classList.remove("radius"));
+  }
 }
 
 function changeColor(e) {

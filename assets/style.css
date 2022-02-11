@@ -26,11 +26,11 @@ body {
 
 /*GRID BASE*/
 
-.grid-item {
-  border-radius: 50%;
-}
-
 #grid-container {
   display: grid;
   width: 30vw;
+}
+
+.radius {
+  border-radius: 50%;
 }
