@@ -9,6 +9,32 @@
     <script src="./assets/script.js" defer></script>
   </head>
   <body>
-    <div id="grid-container"></div>
+    <div id="header"><h1>Etch-a-Sketch</h1></div>
+    <div id="main-body">
+      <div id="sidebar-left" class="side bar">
+        <div>
+          <p>Grid style:</p>
+          <p><input type="checkbox" name="gridSquare" id="square" />Square</p>
+          <p><input type="checkbox" name="gridCircle" id="circle" />Circle</p>
+        </div>
+        <p><button id="changeMode">Color</button></p>
+        <p><button id="clear">Clear</button></p>
+      </div>
+      <div id="main-content" class="main bar">
+        <div id="grid-container"></div>
+        <div id="slider">
+          <input type="range" name="gridSize" id="gridSize" />
+        </div>
+      </div>
+      <div id="sidebar-right" class="side bar">
+        <p><button id="rainbowColors">Rainbow Mode</button></p>
+        <p><input type="color" /></p>
+        <p><button id="shade">Shading</button></p>
+      </div>
+    </div>
+    <div id="footer">
+      Made for <a href="link na TOP">The Odin Project</a> by
+      <a href="link na github">pitagorinpoucak</a>
+    </div>
   </body>
 </html>

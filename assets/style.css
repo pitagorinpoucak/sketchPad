@@ -1,3 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 1px solid red;
+}
+
+/*BASIC STYLE*/
+
+#main-body {
+  display: flex;
+  justify-content: center;
+}
+
+/*GRID BASE*/
+
 .grid-item {
   border: 2px solid black;
   height: 50px;
