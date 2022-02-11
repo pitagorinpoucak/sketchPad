@@ -1,15 +1,32 @@
-let gridSize = 16;
 const gridWidth = document.querySelector(".bar.main").clientWidth;
 let mode = "black";
 let colorPicked = false;
 let brushColor = "black";
 let darken = false;
+const gridSizeSlider = document.getElementById("gridSize");
+const gridSizeText = document.getElementById("gridSizeText");
+let gridSize = gridSizeSlider.value;
 
 drawGrid(gridSize);
+document.getElementById("colorPicker").addEventListener("change", setColor);
 
-document.getElementById("gridSize").addEventListener("change", (e) => {
+gridSizeSlider.addEventListener("change", (e) => {
   clearGridDivs();
+  gridSizeText.value = e.target.valueAsNumber;
   drawGrid(e.target.valueAsNumber);
+});
+
+gridSizeText.addEventListener("change", (e) => {
+  clearGridDivs();
+  let val = e.target.value;
+  if (val < 2) {
+    val = 2;
+  } else if (val > 100) {
+    val = 100;
+  }
+
+  gridSizeSlider.value = val;
+  drawGrid(val);
 });
 
 function clearGridDivs() {
@@ -92,8 +109,6 @@ function changeMode(modeChanged) {
   colorPicked = false;
   mode = modeChanged;
 }
-
-document.getElementById("colorPicker").addEventListener("change", setColor);
 
 function setColor(e) {
   colorPicked = true;

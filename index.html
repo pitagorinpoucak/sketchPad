@@ -19,7 +19,7 @@
           </p>
         </div>
         <p>
-          <button id="changeMode" onclick="changeMode('black')">Color</button>
+          <button id="changeMode" onclick="changeMode('black')">Basic</button>
         </p>
         <p><button id="clear" onclick="clean()">Clear</button></p>
       </div>
@@ -27,7 +27,15 @@
         <div id="grid-container"></div>
         <div id="slider">
           <label for="gridSize">Grid size</label>
-          <input type="range" name="gridSize" id="gridSize" min="2" max="100" />
+          <input
+            type="range"
+            name="gridSize"
+            id="gridSize"
+            min="2"
+            max="100"
+            value="16"
+          />
+          <input type="text" id="gridSizeText" value="16" />
         </div>
       </div>
       <div id="sidebar-right" class="side bar">
