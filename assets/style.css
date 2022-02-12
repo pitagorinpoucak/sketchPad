@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 /*BASIC STYLE*/
@@ -11,6 +12,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100vh;
+  background-color: red;
 }
 
 #main-body {
@@ -19,9 +21,76 @@ body {
   gap: 2vw;
 }
 
-.main.bar {
-  width: 30vw;
+#header {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+#logo {
+  width: 45%;
   height: auto;
+}
+
+.bar {
+  border: 10px ridge #920000;
+}
+
+.side.bar {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#sidebar-left {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+#sidebar-right {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#colorPicker {
+  width: 7em;
+}
+
+button {
+  background-color: yellow;
+  padding: 2rem;
+  border-radius: 30px;
+  color: blue;
+  font-size: x-large;
+  font-weight: 600;
+  width: 7em;
+}
+
+button:hover {
+  background-color: rgb(177, 177, 29);
+  color: rgb(0, 174, 255);
+}
+
+.main.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: none;
+}
+
+#gridSizeText {
+  width: 3em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: white;
 }
 
 /*GRID BASE*/
@@ -29,7 +98,13 @@ body {
 #grid-container {
   display: grid;
   width: 30vw;
+  min-width: fit-content;
+  background-color: white;
+  border: 10px inset #920000;
+  margin: 1.5rem;
 }
+
+/*Class for changing grid item's look*/
 
 .radius {
   border-radius: 50%;

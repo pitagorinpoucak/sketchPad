@@ -14,6 +14,8 @@ gridSizeSlider.addEventListener("change", (e) => {
   clearGridDivs();
   gridSizeText.value = e.target.valueAsNumber;
   drawGrid(e.target.valueAsNumber);
+  document.getElementById("gridStyle").innerText = "Circle";
+  console.log(e.target);
 });
 
 gridSizeText.addEventListener("change", (e) => {
@@ -27,6 +29,7 @@ gridSizeText.addEventListener("change", (e) => {
 
   gridSizeSlider.value = val;
   drawGrid(val);
+  document.getElementById("gridStyle").innerText = "Circle";
 });
 
 function clearGridDivs() {

@@ -9,11 +9,12 @@
     <script src="./assets/script.js" defer></script>
   </head>
   <body>
-    <div id="header"><h1>Etch-a-Sketch</h1></div>
+    <div id="header">
+      <img src="./assets/logo.png" alt="Etch-a-Sketch" id="logo" />
+    </div>
     <div id="main-body">
       <div id="sidebar-left" class="side bar">
         <div>
-          <p>Change grid style:</p>
           <p>
             <button id="gridStyle" onclick="changeGridStyle()">Circle</button>
           </p>
@@ -26,7 +27,7 @@
       <div id="main-content" class="main bar">
         <div id="grid-container"></div>
         <div id="slider">
-          <label for="gridSize">Grid size</label>
+          <label for="gridSize">Size</label>
           <input
             type="range"
             name="gridSize"
@@ -39,12 +40,12 @@
         </div>
       </div>
       <div id="sidebar-right" class="side bar">
+        <p><input type="color" id="colorPicker" /></p>
         <p>
           <button id="rainbowColors" onclick="changeMode('rainbow')">
-            Rainbow Mode
+            Rainbow
           </button>
         </p>
-        <p><input type="color" id="colorPicker" /></p>
         <p>
           <button id="darken" onclick="changeMode('darken')">Darken</button>
         </p>
@@ -54,8 +55,8 @@
       </div>
     </div>
     <div id="footer">
-      Made for <a href="link na TOP">The Odin Project</a> by
-      <a href="link na github">pitagorinpoucak</a>
+      Made for <a href="https://www.theodinproject.com/">The Odin Project</a> by
+      <a href="https://github.com/pitagorinpoucak">pitagorinpoucak</a>
     </div>
   </body>
 </html>
