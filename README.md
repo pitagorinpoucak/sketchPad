@@ -1,6 +1,6 @@
 # sketchPad
 
-##The Odin Project - Etch-a-Sketch
+## The Odin Project - Etch-a-Sketch
 
 This Etch-a-Sketch project was made for The Odin Project Foundations course.
 It's used to learn and solidify DOM manipulation techniques along with
