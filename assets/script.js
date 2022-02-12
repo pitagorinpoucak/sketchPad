@@ -8,8 +8,11 @@ const gridSizeText = document.getElementById("gridSizeText");
 let gridSize = gridSizeSlider.value;
 
 drawGrid(gridSize);
+
+//Set brush color with color picker
 document.getElementById("colorPicker").addEventListener("change", setColor);
 
+//Event listeners for grid size change
 gridSizeSlider.addEventListener("change", (e) => {
   clearGridDivs();
   gridSizeText.value = e.target.valueAsNumber;
@@ -32,14 +35,7 @@ gridSizeText.addEventListener("change", (e) => {
   document.getElementById("gridStyle").innerText = "Circle";
 });
 
-function clearGridDivs() {
-  const grid = document.getElementById("grid-container");
-  let element = grid.lastElementChild;
-  while (element) {
-    grid.removeChild(element);
-    element = grid.lastElementChild;
-  }
-}
+//DRAWING AND ERASING GRID
 
 function drawGrid(size) {
   const gridContainer = document.getElementById("grid-container");
@@ -59,18 +55,16 @@ function drawGrid(size) {
   });
 }
 
-function changeGridStyle() {
-  const button = document.getElementById("gridStyle");
-  const gridParts = document.querySelectorAll(".grid-item");
-  if (button.innerText === "Circle") {
-    button.innerText = "Square";
-    gridParts.forEach((item) => item.classList.add("radius"));
-  } else {
-    button.innerText = "Circle";
-
-    gridParts.forEach((item) => item.classList.remove("radius"));
+function clearGridDivs() {
+  const grid = document.getElementById("grid-container");
+  let element = grid.lastElementChild;
+  while (element) {
+    grid.removeChild(element);
+    element = grid.lastElementChild;
   }
 }
+
+//DRAWING IN GRID
 
 function changeColor(e) {
   if (colorPicked) {
@@ -103,9 +97,19 @@ function changeColor(e) {
   }
 }
 
-function clean() {
-  const gridItems = document.querySelectorAll(".grid-item");
-  gridItems.forEach((item) => (item.style.backgroundColor = "white"));
+//TOOLS AND BUTTONS
+
+function changeGridStyle() {
+  const button = document.getElementById("gridStyle");
+  const gridParts = document.querySelectorAll(".grid-item");
+  if (button.innerText === "Circle") {
+    button.innerText = "Square";
+    gridParts.forEach((item) => item.classList.add("radius"));
+  } else {
+    button.innerText = "Circle";
+
+    gridParts.forEach((item) => item.classList.remove("radius"));
+  }
 }
 
 function changeMode(modeChanged) {
@@ -118,6 +122,15 @@ function setColor(e) {
   brushColor = e.target.value;
 }
 
+function clean() {
+  const gridItems = document.querySelectorAll(".grid-item");
+  gridItems.forEach((item) => (item.style.backgroundColor = "white"));
+}
+
+/*Function to manipulate color, in this case used only
+to darken with input of (-0.1, color, false, true)
+but can be used to mix two colors, lighten or darken color, or make it transparent
+at least according to stackOverflow from where it's copied*/
 const pSBC = (p, c0, c1, l) => {
   let r,
     g,
